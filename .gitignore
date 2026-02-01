@@ -5,3 +5,7 @@
 !.gitignore
 !claude.md
 !settings.json
+
+# 允许提交的目录
+!commands/
+!skills/
