@@ -15,9 +15,22 @@
       "Bash(git init:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
+      "Bash(git diff:*)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
       "Bash(git checkout:*)",
-      "Bash(cd \\\"*\\\" && ls -la)",
-      "Bash(cd \\\"*\\\" && find *)"
+      "Bash(cd \\\"*\\\" && git init *)",
+      "Bash(cd \\\"*\\\" && git add *)",
+      "Bash(cd \\\"*\\\" && git commit *)",
+      "Bash(cd \\\"*\\\" && git diff *)",
+      "Bash(cd \\\"*\\\" && git status *)",
+      "Bash(cd \\\"*\\\" && git log *)",
+      "Bash(cd \\\"*\\\" && git checkout *)",
+      "Bash(cd \\\"*\\\" && ls *)",
+      "Bash(cd \\\"*\\\" && find *)",
+      "Bash(cd \\\"*\\\" && echo *)",
+      "Bash(cd \\\"*\\\" && grep *)",
+      "Bash(cd \\\"*\\\" && sed *)"
     ]
   }
 }
