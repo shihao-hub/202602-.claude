@@ -22,8 +22,11 @@
       "Bash(rm -f / *)",
       "Bash(rm -f /*)",
       "Bash(rm -fr *)",
+      "Bash(rm -f *)",
+      "Bash(rm *)",
       "Bash(del /s /q *)",
       "Bash(rmdir /s /q *)",
+      "Bash(del *)",
       "Bash(mkfs *)",
       "Bash(dd if=*)",
       "Bash(dd of=/dev/*)",
@@ -33,7 +36,13 @@
       "Bash(shred *)",
       "Bash(wipefs *)",
       "Bash(format *)",
-      "Bash(fdisk *)"
+      "Bash(fdisk *)",
+      "Bash(cd * && rm *)",
+      "Bash(cd * && del *)",
+      "Bash(cd * && shred *)",
+      "Bash(cd \\\"*\\\" && rm *)",
+      "Bash(cd \\\"*\\\" && del *)",
+      "Bash(cd \\\"*\\\" && shred *)"
     ],
     "allow": [
       "Bash(*)"
