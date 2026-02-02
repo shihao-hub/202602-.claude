@@ -5,7 +5,9 @@
 !.gitignore
 !claude.md
 !settings.json
+!*.bat
 
 # 允许提交的目录
 !commands/
 !skills/
+!hooks/

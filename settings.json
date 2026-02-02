@@ -11,26 +11,32 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "permissions": {
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -rf / *)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf \\*)",
+      "Bash(rm -rf /)",
+      "Bash(rm -Rf *)",
+      "Bash(rm -RF *)",
+      "Bash(rm -f / *)",
+      "Bash(rm -f /*)",
+      "Bash(rm -fr *)",
+      "Bash(del /s /q *)",
+      "Bash(rmdir /s /q *)",
+      "Bash(mkfs *)",
+      "Bash(dd if=*)",
+      "Bash(dd of=/dev/*)",
+      "Bash(> /dev/*)",
+      "Bash(chmod 000 /*)",
+      "Bash(chmod 000 /)",
+      "Bash(shred *)",
+      "Bash(wipefs *)",
+      "Bash(format *)",
+      "Bash(fdisk *)"
+    ],
     "allow": [
-      "Bash(git init:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git diff:*)",
-      "Bash(git status:*)",
-      "Bash(git log:*)",
-      "Bash(git checkout:*)",
-      "Bash(cd \\\"*\\\" && git init *)",
-      "Bash(cd \\\"*\\\" && git add *)",
-      "Bash(cd \\\"*\\\" && git commit *)",
-      "Bash(cd \\\"*\\\" && git diff *)",
-      "Bash(cd \\\"*\\\" && git status *)",
-      "Bash(cd \\\"*\\\" && git log *)",
-      "Bash(cd \\\"*\\\" && git checkout *)",
-      "Bash(cd \\\"*\\\" && ls *)",
-      "Bash(cd \\\"*\\\" && find *)",
-      "Bash(cd \\\"*\\\" && echo *)",
-      "Bash(cd \\\"*\\\" && grep *)",
-      "Bash(cd \\\"*\\\" && sed *)"
+      "Bash(*)"
     ]
   }
 }
