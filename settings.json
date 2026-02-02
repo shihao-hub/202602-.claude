@@ -64,7 +64,23 @@
       "Bash(&& rm *)",
       "Bash(&& del *)",
       "Bash(|| rm *)",
-      "Bash(|| del *)"
+      "Bash(|| del *)",
+      "Bash(python * -c *)",
+      "Bash(python3 * -c *)",
+      "Bash(node * -e *)",
+      "Bash(perl * -e *)",
+      "Bash(ruby * -e *)",
+      "Bash(eval *)",
+      "Bash(echo * | base64 *)",
+      "Bash(echo * | sh)",
+      "Bash(echo * | bash)",
+      "Bash(git clean -fd)",
+      "Bash(git clean -fxd)",
+      "Bash(mv * /dev/null)",
+      "Bash(ln -sf *)",
+      "Bash(at *)",
+      "Bash(batch *)",
+      "Bash(cron *)"
     ],
     "allow": [
       "Bash(*)"
