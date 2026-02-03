@@ -172,5 +172,9 @@ Closes #123
 
 ---
 
+我希望你在 docs 目录中写入 markdown 文档时，采用 kebab-case（连字符分隔）的命名规范
+
+---
+
 
 

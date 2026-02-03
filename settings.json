@@ -5,12 +5,10 @@
     "API_TIMEOUT_MS": "3000000",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
-  "enabledPlugins": {
-    "glm-plan-usage@zai-coding-plugins": true,
-    "glm-plan-bug@zai-coding-plugins": true,
-    "gopls-lsp@claude-plugins-official": true
-  },
   "permissions": {
+    "allow": [
+      "Bash(*)"
+    ],
     "deny": [
       "Bash(rm -rf *)",
       "Bash(rm -rf / *)",
@@ -148,8 +146,13 @@
       "Bash(batch *)",
       "Bash(cron *)"
     ],
-    "allow": [
-      "Bash(*)"
-    ]
+    "defaultMode": "default"
+  },
+  "enabledPlugins": {
+    "glm-plan-usage@zai-coding-plugins": true,
+    "glm-plan-bug@zai-coding-plugins": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "example-skills@anthropic-agent-skills": true
   }
 }
