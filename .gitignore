@@ -6,6 +6,7 @@
 !claude.md
 !settings.json
 !*.bat
+!README.md
 
 # 允许提交的目录
 !commands/
