@@ -14,6 +14,7 @@
 ├── hooks/              # 钩子脚本
 ├── agents/             # AI 代理配置
 ├── plugins/            # 插件目录
+├── docs/               # 项目文档
 ├── projects/           # 项目相关文件
 └── tasks/              # 任务管理文件
 ```
@@ -51,6 +52,10 @@ Claude Code 的核心配置文件，包含编辑器、模型、UI 等设置。
 
 ### AI 代理
 在 `agents/` 目录中可以配置专门的 AI 代理处理特定任务。
+
+### 项目文档
+在 `docs/` 目录中包含详细的使用文档：
+- [Claude Code Hooks 示例](docs/claude-code-hooks-example.md) - hooks 配置和使用指南
 
 ## Commit 规范
 
@@ -101,6 +106,10 @@ Claude Code 的核心配置文件，包含编辑器、模型、UI 等设置。
 本配置为个人 Claude Code 使用环境，包含自定义配置和指令。
 
 ## 更新日志
+
+### 2026-02-05
+- 添加 docs 目录到 .gitignore 白名单
+- 新增 Claude Code Hooks 示例文档
 
 ### 2026-02-04
 - 添加 agents 目录到 .gitignore 白名单
