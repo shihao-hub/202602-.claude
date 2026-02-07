@@ -15,3 +15,5 @@
 !agents/
 !docs/
 !docs/*
+!rules/
+!rules/*
