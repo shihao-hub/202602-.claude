@@ -57,6 +57,11 @@ Claude Code 的核心配置文件，包含编辑器、模型、UI 等设置。
 在 `docs/` 目录中包含详细的使用文档：
 - [Claude Code Hooks 示例](docs/claude-code-hooks-example.md) - hooks 配置和使用指南
 
+### 规范文档
+在 `rules/` 目录中包含开发和测试规范：
+- [Web 接口命名规范](rules/web-api-naming-convention.md) - API 设计和命名规范
+- [用户故事和测试指南规范](rules/user-stories-test-guide.md) - 用户故事编写和测试用例规范
+
 ## Commit 规范
 
 本项目遵循以下 commit message 规范：
