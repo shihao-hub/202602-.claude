@@ -6,38 +6,41 @@
 
 ### 1. 路径参数规则
 
-**规则：每个接口最多包含一个路径参数，且必须位于路由的末尾。**
+**规则：每个接口最多包含一个路径参数，且必须位于路由的最后一段。**
 
 #### 示例
 
 **✅ 推荐写法：**
 ```
-GET    /api/users/{id}              # 获取单个用户
-PUT    /api/users/{id}              # 更新用户
-DELETE /api/users/{id}              # 删除用户
-GET    /api/posts/{postId}/comments # 获取文章的评论列表
+GET    /api/users/{id}         # 获取单个用户
+PUT    /api/users/{id}         # 更新用户
+DELETE /api/users/{id}         # 删除用户
+GET    /api/comments/{id}      # 获取单条评论
 ```
 
 **❌ 不推荐写法：**
 ```
+GET    /api/posts/{postId}/comments        # 路径参数不在末尾
 GET    /api/users/{userId}/posts/{postId}  # 多个路径参数
-GET    /api/{resource}/api/{action}        # 路径参数不在末尾
+GET    /api/{resource}/api/{action}        # 路径参数位置混乱
 ```
 
 #### 原因说明
 
-- 多个路径参数会增加接口的复杂度和理解成本
-- 路径参数位于末尾可以保持路由结构的清晰和层次性
-- 如果需要多个参数，应考虑使用查询参数（Query Parameters）
+- 路径参数位于末尾使路由结构更清晰、更易理解
+- 简化路由匹配逻辑，提高性能
+- 降低接口的复杂度和维护成本
 
-**替代方案：**
+**替代方案（使用查询参数）：**
 ```
-# 使用查询参数替代多个路径参数
-GET /api/users?userId=123&postId=456
+# 需要获取某篇文章的评论时，使用查询参数
+GET /api/comments?postId=123
 
-# 或拆分为多个接口
-GET /api/users/{userId}
-GET /api/users/{userId}/posts/{postId}
+# 需要获取某个用户的文章时，使用查询参数
+GET /api/posts?authorId=456
+
+# 需要多个过滤条件时，组合使用查询参数
+GET /api/comments?postId=123&status=approved
 ```
 
 ---
@@ -104,16 +107,17 @@ GET /api/user
 GET /api/post
 ```
 
-**3. 层级结构表达资源关系**
+**3. 使用查询参数表达资源关联关系**
 
 ```
 ✅ 推荐：
-GET /api/users/{userId}/posts          # 获取用户的文章
-GET /api/posts/{postId}/comments       # 获取文章的评论
-POST /api/users/{userId}/posts         # 为用户创建文章
+GET /api/posts?authorId=123            # 获取指定用户的文章
+GET /api/comments?postId=456           # 获取指定文章的评论
+POST /api/posts                         # 创建文章（authorId 在请求体中）
 
 ❌ 不推荐：
-GET /api/posts?userId={userId}         # 虽然可行，但层级关系不明确
+GET /api/users/{userId}/posts          # 路径参数不在末尾
+GET /api/posts/{postId}/comments       # 路径参数不在末尾
 GET /api/user-posts                    # 语义不清晰
 ```
 
@@ -143,10 +147,10 @@ GET    /api/users/{id}         # 获取用户详情
 PUT    /api/users/{id}         # 更新用户信息
 DELETE /api/users/{id}         # 删除用户
 
-# 用户相关操作
+# 用户相关操作（使用查询参数）
 POST   /api/users/{id}/activate   # 激活用户
 POST   /api/users/{id}/deactivate # 停用用户
-GET    /api/users/{id}/posts      # 获取用户的文章
+GET    /api/posts?authorId={id}   # 获取用户的文章
 ```
 
 ### 文章管理接口
@@ -161,9 +165,9 @@ GET    /api/posts/{id}         # 获取文章详情
 PUT    /api/posts/{id}         # 更新文章
 DELETE /api/posts/{id}         # 删除文章
 
-# 文章评论
-GET    /api/posts/{id}/comments    # 获取文章的评论
-POST   /api/posts/{id}/comments   # 为文章添加评论
+# 文章评论（使用查询参数）
+GET    /api/comments?postId={id}    # 获取文章的评论
+POST   /api/comments                # 为文章添加评论（postId 在请求体中）
 ```
 
 ---
@@ -188,7 +192,8 @@ POST /api/users/batch-update      # 批量更新
 
 ```
 GET /api/users/stats              # 用户统计
-GET /api/posts/{id}/views         # 文章浏览量
+GET /api/post-views/{id}          # 文章浏览量
+GET /api/stats/posts/{id}         # 文章统计数据（另一种方案）
 ```
 
 ### 4. 导入导出
@@ -206,7 +211,7 @@ POST /api/users/import            # 导入用户数据
 |--------|------|----------|
 | `/api/getUserById` | 使用动词，冗余 | 改为 `GET /api/users/{id}` |
 | `/api/user` | 使用单数 | 改为 `GET /api/users` |
-| `/api/users/{id}/posts/{postId}/comments/{commentId}` | 多层路径参数 | 拆分接口或简化结构 |
+| `/api/posts/{postId}/comments` | 路径参数不在末尾 | 改为 `GET /api/comments?postId=xxx` |
 | `/api/doSomething` | 语义不明确 | 使用具体的业务术语 |
 | `/api/v1/users` 和 `/api/v2/users` 同时存在 | 版本混乱 | 统一版本管理策略 |
 
@@ -216,13 +221,13 @@ POST /api/users/import            # 导入用户数据
 
 在设计新接口时，请确保：
 
-- [ ] 路径参数不超过一个，且位于路由末尾
+- [ ] 路径参数不超过一个，且必须位于路由的最后一段
 - [ ] 优先使用 RESTful 风格的 HTTP 方法
 - [ ] 路由 + HTTP 方法能清晰表达业务含义
 - [ ] 使用名词而非动词命名资源
 - [ ] 使用复数形式表示资源集合
-- [ ] 合理使用查询参数进行过滤和分页
-- [ ] 避免过深的路由层级（建议不超过 3 层）
+- [ ] 合理使用查询参数进行过滤、分页和表达资源关联
+- [ ] 避免过深的路由层级（建议不超过 2 层）
 
 ---
 
