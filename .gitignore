@@ -10,10 +10,16 @@
 
 # 允许提交的目录
 !commands/
+!commands/**
 !skills/
+!skills/**
 !hooks/
+!hooks/**
 !agents/
+!agents/**
 !docs/
 !docs/*
 !rules/
 !rules/*
+!references/
+!references/**

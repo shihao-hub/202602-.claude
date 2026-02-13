@@ -62,6 +62,12 @@ Claude Code 的核心配置文件，包含编辑器、模型、UI 等设置。
 - [Web 接口命名规范](rules/web-api-naming-convention.md) - API 设计和命名规范
 - [用户故事和测试指南规范](rules/user-stories-test-guide.md) - 用户故事编写和测试用例规范
 
+### 自定义技能 (Skills)
+在 `skills/` 目录中包含自动应用的技能：
+- `changelog-guide` - CHANGELOG.md 编写指南和最佳实践
+- `web-api-conventions` - Web API 接口设计和命名规范
+- `user-stories-guide` - 用户故事和测试用例编写指南
+
 ## Commit 规范
 
 本项目遵循以下 commit message 规范：
