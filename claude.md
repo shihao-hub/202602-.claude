@@ -52,3 +52,7 @@
 我希望你在回答一些问题的时候，可以大胆探索自动化的可能
 
 ---
+
+我希望你遇到`Error: Permission to use Bash with command`时，在整个回复结束后，全部列出来让我阅读
+
+---
