@@ -1,23 +1,29 @@
-我希望你在每次修改后，使用 git 提交一下（git 未初始化则初始化和创建 .gitignore 文件），commit message 规范可参考：
+我希望你在每次修改后，请自动用 Git 提交。规则如下：
 
-````markdown
-**格式**：  
-`<type>(<scope>): <subject>`（中文，≤50字，动词开头，无句号）  
-可选正文（说明“是什么”和“为什么”，每行≤72字符，用 `-` 列表）  
-可选页脚（如 `BREAKING CHANGE:` 或 `Closes #xxx`）
+1. 禁止嵌套 Git：若当前目录或任意父目录已存在 .git，则直接提交，不得初始化。
+2. 未被 Git 管理时（路径上无任何 .git）：
+   - 执行 `git init`
+   - 创建基本 `.gitignore`
+3. 提交格式：
 
-**Type**：  
-`feat`（新功能）、`fix`（修复）、`docs`（文档）、`style`（格式）、`refactor`（重构）、`perf`（性能）、`test`、`chore`、`ci`、`revert`
-
-**Scope 示例**：  
-`creator`, `product`, `auth`, `db`, `api`, `metrics`, `submission` 等（多模块时可省略）
-
-**动词参考**：添加、修复、优化、重构、移除、更新、升级、集成
-
-**特殊**：  
-- 破坏性变更加 `!` 并在 footer 写 `BREAKING CHANGE: ...`  
-- 关联 issue 用 `Closes #xxx`
-````
+    ```markdown
+    **格式**：  
+    `<type>(<scope>): <subject>`（中文，≤50字，动词开头，无句号）  
+    可选正文（说明“是什么”和“为什么”，每行≤72字符，用 `-` 列表）  
+    可选页脚（如 `BREAKING CHANGE:` 或 `Closes #xxx`）
+    
+    **Type**：  
+    `feat`（新功能）、`fix`（修复）、`docs`（文档）、`style`（格式）、`refactor`（重构）、`perf`（性能）、`test`、`chore`、`ci`、`revert`
+    
+    **Scope 示例**：  
+    `creator`, `product`, `auth`, `db`, `api`, `metrics`, `submission` 等（多模块时可省略）
+    
+    **动词参考**：添加、修复、优化、重构、移除、更新、升级、集成
+    
+    **特殊**：  
+    - 破坏性变更加 `!` 并在 footer 写 `BREAKING CHANGE: ...`  
+    - 关联 issue 用 `Closes #xxx`
+    ```
 
 ---
 
