@@ -1,5 +1,5 @@
 ---
-name: skill-web-api-conventions
+name: custom-skill-web-api-conventions
 description: Web API 接口设计和命名规范。在设计、审查或讨论 API 接口时自动应用这些规范，包括路径参数规则、RESTful 风格和语义化要求。
 ---
 

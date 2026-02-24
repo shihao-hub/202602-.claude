@@ -1,5 +1,5 @@
 ---
-name: skill-user-stories-guide
+name: custom-skill-user-stories-guide
 description: 用户故事和测试用例编写指南。在编写用户故事文档、定义 API 测试用例、或设计用户行为流程时，使用此指南来确保文档结构清晰、可测试且符合规范。
 ---
 
