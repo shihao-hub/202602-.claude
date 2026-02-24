@@ -1,5 +1,5 @@
 ---
-name: command-git-workflow
+name: custom-command-git-workflow
 description: Git 提交和推送自动化流程。检查变更、生成符合规范的提交消息、提交更改并推送到远程仓库。
 disable-model-invocation: true
 ---
