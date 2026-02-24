@@ -1,7 +1,6 @@
 ---
-name: command-changelog-guide
+name: skill-changelog-guide
 description: CHANGELOG.md 编写指南和最佳实践。在创建、更新或维护项目变更日志时使用，包括 Keep a Changelog 规范、版本记录结构和自动化工具建议。
-disable-model-invocation: true
 ---
 
 # CHANGELOG.md 编写指南
