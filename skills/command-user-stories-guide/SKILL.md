@@ -1,11 +1,15 @@
 ---
-name: custom-user-stories-guide
+name: command-user-stories-guide
 description: 用户故事和测试用例编写指南。在编写用户故事文档、定义 API 测试用例、或设计用户行为流程时，使用此指南来确保文档结构清晰、可测试且符合规范。
 ---
 
 # 用户故事和测试指南规范
 
 本 skill 定义了如何编写用户故事文档以及如何为用户故事编写测试用例。
+
+## 何时使用
+
+取决于技能的配置。默认情况下，描述会在会话开始时加载，完整内容会在使用时加载。对于仅限用户的技能（disable-model-invocation: true），在你调用它们之前，不会加载任何内容。
 
 ## 核心概念
 

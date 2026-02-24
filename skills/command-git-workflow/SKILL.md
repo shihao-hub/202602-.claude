@@ -1,11 +1,15 @@
 ---
-name: custom-git-workflow
+name: command-git-workflow
 description: Git 提交和推送自动化流程。检查变更、生成符合规范的提交消息、提交更改并推送到远程仓库。
 ---
 
 # Git 提交和推送指南
 
 本 skill 提供了一套完整的 Git 工作流程，用于检查变更、创建符合规范的提交消息并推送到远程仓库。
+
+## 何时使用
+
+取决于技能的配置。默认情况下，描述会在会话开始时加载，完整内容会在使用时加载。对于仅限用户的技能（disable-model-invocation: true），在你调用它们之前，不会加载任何内容。
 
 ## 工作流程
 

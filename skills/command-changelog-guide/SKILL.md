@@ -1,11 +1,15 @@
 ---
-name: custom-changelog-guide
+name: command-changelog-guide
 description: CHANGELOG.md 编写指南和最佳实践。在创建、更新或维护项目变更日志时使用，包括 Keep a Changelog 规范、版本记录结构和自动化工具建议。
 ---
 
 # CHANGELOG.md 编写指南
 
 本 skill 提供了 CHANGELOG.md 的编写规范和最佳实践，确保项目的版本变更历史清晰、可追溯。
+
+## 何时使用
+
+取决于技能的配置。默认情况下，描述会在会话开始时加载，完整内容会在使用时加载。对于仅限用户的技能（disable-model-invocation: true），在你调用它们之前，不会加载任何内容。
 
 ## 什么是 CHANGELOG.md
 

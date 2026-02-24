@@ -1,11 +1,15 @@
 ---
-name: custom-web-api-conventions
+name: command-web-api-conventions
 description: Web API 接口设计和命名规范。在设计、审查或讨论 API 接口时自动应用这些规范，包括路径参数规则、RESTful 风格和语义化要求。
 ---
 
 # Web 接口命名规范
 
 本 skill 定义了 Web API 接口的设计和命名规范，确保接口的一致性、可读性和可维护性。
+
+## 何时使用
+
+取决于技能的配置。默认情况下，描述会在会话开始时加载，完整内容会在使用时加载。对于仅限用户的技能（disable-model-invocation: true），在你调用它们之前，不会加载任何内容。
 
 ## 核心原则
 
