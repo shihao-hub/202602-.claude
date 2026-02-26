@@ -4,7 +4,7 @@
 # 然后排除（不忽略）要提交的文件
 !.gitignore
 !claude.md
-!settings.json
+!settings*.json
 !*.bat
 !README.md
 
