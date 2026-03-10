@@ -23,4 +23,5 @@
 !rules/*
 !references/
 !references/**
+!.archieved_files/
 !.archieved_files/**
